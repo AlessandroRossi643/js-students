@@ -23,3 +23,11 @@ var lista_studenti={
 for (var i = 0; i < lista_studenti.nome.length; i++) {
   console.log(lista_studenti.nome[i] + " " + lista_studenti.cognome[i]);
 }
+
+console.log("--------------------");
+
+//Inserimento dati nuovo Studente
+lista_studenti.nome[4]=prompt("Inserisci un nome");
+lista_studenti.cognome[4]=prompt("Inserisci un cognome");
+lista_studenti.eta[4]=parseInt(prompt("Inserisci un'età"));
+console.log(lista_studenti.nome[4] + " " + lista_studenti.cognome[4] + ", " + lista_studenti.eta[4]);
