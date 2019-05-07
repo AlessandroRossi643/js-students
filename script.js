@@ -13,21 +13,48 @@ for (var field in studente) {
 console.log("--------------------");
 
 // Creazione array Studenti
-var lista_studenti={
-  nome:["Francesco","Niccolò","Luca","Maurizio"],
-  cognome:["Poni","Rinaldini","Lanzi","Pisciottu"],
-  eta:[23,21,25,39]
-};
+var lista_studenti=[
+  {
+    "nome":"Maurizio",
+    "cognome":"Pisciottu",
+    "eta":26
+  },
+
+  {
+    "nome":"Patrizia",
+    "cognome":"Dindelli",
+    "eta": 62
+  }
+]
+
+lista_studenti.push(studente);
+
+// Funzione che mi permette di stampare la lista dell'array
+function stampalistastudenti(array){
+  for (var i = 0; i < array.length; i++) {
+    console.log(array[i].nome + " "+ array[i].cognome);
+  }
+
+}
 
 // Stampa nome & cognome array studenti
-for (var i = 0; i < lista_studenti.nome.length; i++) {
-  console.log(lista_studenti.nome[i] + " " + lista_studenti.cognome[i]);
-}
+stampalistastudenti(lista_studenti);
 
 console.log("--------------------");
 
 //Inserimento dati nuovo Studente
-lista_studenti.nome[4]=prompt("Inserisci un nome");
-lista_studenti.cognome[4]=prompt("Inserisci un cognome");
-lista_studenti.eta[4]=parseInt(prompt("Inserisci un'età"));
-console.log(lista_studenti.nome[4] + " " + lista_studenti.cognome[4] + ", " + lista_studenti.eta[4]);
+var nomeutente=prompt("Inserisci un nome");
+var cognomeutente=prompt("Inserisci un cognome");
+var etautente=parseInt(prompt("Inserisci un'età"));
+
+// Creazione oggetto nuovoStudente
+var nuovoStudente={
+  "nome": nomeutente,
+  "cognome": cognomeutente,
+  "eta": etautente
+}
+
+// Inserimento dell'oggetto nuovoStudente nella lista degli studenti
+lista_studenti.push(nuovoStudente);
+
+stampalistastudenti(lista_studenti);
